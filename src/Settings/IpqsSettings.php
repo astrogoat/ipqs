@@ -8,23 +8,18 @@ use Astrogoat\Ipqs\Actions\IpqsAction;
 
 class IpqsSettings extends AppSettings
 {
-    // public string $url;
+    public string $key;
+    public string $ir_click_id;
+    public string $utm_content;
 
     public function rules(): array
     {
         return [
-            // 'url' => Rule::requiredIf($this->enabled === true),
+            'key' => Rule::requiredIf($this->enabled === true),
+            'ir_click_id' => ['required_unless:enabled, false'],
+            'utm_content' => ['required_unless:enabled, false'],
         ];
     }
-
-    // protected static array $actions = [
-    //     IpqsAction::class,
-    // ];
-
-    // public static function encrypted(): array
-    // {
-    //     return ['access_token'];
-    // }
 
     public function description(): string
     {
@@ -34,5 +29,24 @@ class IpqsSettings extends AppSettings
     public static function group(): string
     {
         return 'ipqs';
+    }
+
+
+    public function section(): array
+    {
+        return [
+            [
+                'tile'=> 'Key',
+            ],
+            [
+                'title' => 'IR Click Id',
+                'properties' => ['ir_click_id']
+            ],
+            [
+                'title' => 'UTM Content',
+                'properties'=> ['utm_content']
+            ]
+
+        ];
     }
 }
