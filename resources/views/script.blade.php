@@ -1,4 +1,3 @@
-
 @if(Astrogoat\Ipqs\Settings\IpqsSettings::isEnabled())
     <!-- [Ipqs] Start -->
      @php
