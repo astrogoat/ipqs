@@ -16,8 +16,8 @@ class IpqsSettings extends AppSettings
     {
         return [
             'key' => Rule::requiredIf($this->enabled === true),
-            'ir_click_id' => ['required_unless:enabled, false'],
-            'utm_content' => ['required_unless:enabled, false'],
+            'ir_click_id' => ['required'],
+            'utm_content' => ['required'],
         ];
     }
 
