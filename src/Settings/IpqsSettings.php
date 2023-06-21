@@ -4,7 +4,6 @@ namespace Astrogoat\Ipqs\Settings;
 
 use Helix\Lego\Settings\AppSettings;
 use Illuminate\Validation\Rule;
-use Astrogoat\Ipqs\Actions\IpqsAction;
 
 class IpqsSettings extends AppSettings
 {
@@ -31,21 +30,20 @@ class IpqsSettings extends AppSettings
         return 'ipqs';
     }
 
-
     public function section(): array
     {
         return [
             [
-                'tile'=> 'Key',
+                'tile' => 'Key',
             ],
             [
                 'title' => 'IR Click Id',
-                'properties' => ['ir_click_id']
+                'properties' => ['ir_click_id'],
             ],
             [
                 'title' => 'UTM Content',
-                'properties'=> ['utm_content']
-            ]
+                'properties' => ['utm_content'],
+            ],
 
         ];
     }
