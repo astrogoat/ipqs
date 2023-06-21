@@ -2,11 +2,11 @@
 
 namespace Astrogoat\Ipqs;
 
+use Astrogoat\Ipqs\Settings\IpqsSettings;
 use Helix\Lego\Apps\App;
 use Helix\Lego\LegoManager;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Astrogoat\Ipqs\Settings\IpqsSettings;
 
 class IpqsServiceProvider extends PackageServiceProvider
 {

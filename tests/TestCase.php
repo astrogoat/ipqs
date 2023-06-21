@@ -2,9 +2,9 @@
 
 namespace Astrogoat\Ipqs\Tests;
 
+use Astrogoat\Ipqs\IpqsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Astrogoat\Ipqs\IpqsServiceProvider;
 
 class TestCase extends Orchestra
 {
