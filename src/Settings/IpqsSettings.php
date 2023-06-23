@@ -35,6 +35,7 @@ class IpqsSettings extends AppSettings
         return [
             [
                 'title' => 'Key',
+                'properties' => ['key'],
             ],
             [
                 'title' => 'IR Click Id',
