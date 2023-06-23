@@ -17,8 +17,8 @@
         if (typeof Startup !== "undefined") {
             // Parse "utm_content" and "irclickid" from URL and store in Startup
             var urlParams = new URLSearchParams(window.location.search);
-            var utm_content = urlParams.get("{{settings(Astrogoat\Ipqs\Settings\IpqsSettings::class, 'utm_content')}}");
-            var irclickid = urlParams.get("{{settings(Astrogoat\Ipqs\Settings\IpqsSettings::class, 'ir_click_id')}}");
+            var utm_content = urlParams.get('utm_content');
+            var irclickid = urlParams.get('irclickid');
 
             // Store "utm_content" and "irclickid" in Startup
             Startup.Store('publisherID', utm_content);
