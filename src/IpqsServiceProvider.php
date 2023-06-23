@@ -4,6 +4,7 @@ namespace Astrogoat\Ipqs;
 
 use Astrogoat\Ipqs\Settings\IpqsSettings;
 use Helix\Lego\Apps\App;
+use Helix\Lego\Apps\Services\IncludeFrontendViews;
 use Helix\Lego\LegoManager;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -15,6 +16,9 @@ class IpqsServiceProvider extends PackageServiceProvider
         return $app
             ->name('ipqs')
             ->settings(IpqsSettings::class)
+            ->includeFrontendViews(function (IncludeFrontendViews $views) {
+                return $views->addToEnd('ipqs::script');
+            })
             ->migrations([
                 __DIR__ . '/../database/migrations',
                 __DIR__ . '/../database/migrations/settings',
