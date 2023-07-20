@@ -15,15 +15,31 @@
         // Strongly suggested to pass "email" and "userID" for better device tracking and performance
 
         if (typeof Startup !== "undefined") {
+
             // Parse "utm_content" and "irclickid" from URL and store in Startup
+
             var urlParams = new URLSearchParams(window.location.search);
             var utm_content = urlParams.get('utm_content');
             var irclickid = urlParams.get('irclickid');
 
-            // Store "utm_content" and "irclickid" in Startup
+            // Store "utm_content" and "irclickid" and "domain" name in Startup
+
             Startup.Store('publisherID', utm_content);
             Startup.Store('clickID', irclickid);
+            Startup.Store('domain', window.location.hostname);
+
+            // Evaluation of publisher ID existence
+            // If it's parsed from the URL, run the script
+            // Otherwise, prevent the script from running
+
+            if (typeof utm_content !== "undefined") {
+                Startup.Init();
+            }
+            else {
+                Startup.Pause();
+            }
         }
+
     </script>
 <!-- [Ipqs] End -->
 @endif
